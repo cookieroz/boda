@@ -6,7 +6,7 @@ export const TopNav = () => (
       {NAV_LINKS.map((link, index) => (
         <Link
           aria-label={`wedding ${link}`}
-          className="mr-4"
+          className="cursor-pointer font-bold mr-2 text-xl hover:text-cyan-700 hover:underline sm:mr-5 sm:text-2xl"
           key={`nav-${link}-${index}`}
           title={`wedding ${link}`}
           to={link === 'home' ? '/' : `/${link}`}
@@ -18,5 +18,4 @@ export const TopNav = () => (
   </nav>
 );
 
-// const NAV_LINKS = ['home', 'rsvp', 'travel', 'schedule', 'negril', 'faq'];
 const NAV_LINKS = ['home', 'travel', 'schedule', 'negril', 'faq'];

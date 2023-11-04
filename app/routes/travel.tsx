@@ -1,11 +1,8 @@
 import { TravelCard } from '~/components/TravelCard';
-import { Icon } from '~/components/Icon';
 
 const TravelPage = () => (
   <>
     <h1 className="my-3">Travel</h1>
-
-    <Icon id="suitcase" />
 
     {TRAVEL_DETAILS.map(({ description, title }) => (
       <TravelCard key={title} description={description} title={title} />

@@ -1,6 +1,8 @@
+import { HomeRow } from '~/components/HomeRow';
+
 export default function IndexRoute() {
   return (
-    <div className="flex gap-4 py-8">
+    <div className="flex gap-8 py-8">
       <div className="flex flex-col flex-1 items-center justify-center">
         <img
           alt="cartoon of 2 cats getting married on the beach"
@@ -10,17 +12,22 @@ export default function IndexRoute() {
       </div>
 
       <div className="flex-1">
-        <h2 className="text-4xl">
+        <h4 className="text-4xl">
           We would love to celebrate our wedding with you in Jamaica!
-        </h2>
+        </h4>
 
-        <div className="flex flex-col h-full items-center justify-center max-h-full -mt-8">
-          <h2 className="text-4xl mb-3">wedding details</h2>
+        <div className="flex flex-col items-center justify-center">
+          <h2 className="my-4 text-4xl text-center">Wedding Details</h2>
 
-          <p>Date: December 16, 2023</p>
-          <p>Time: (TBC)</p>
-          <p>Location: Negril, Jamaica</p>
-          {/*<p>Attire: Resort</p>*/}
+          <div className="">
+            <HomeRow boldText="Date:" text=" December 16, 2023" />
+            <HomeRow boldText="Time:" text=" Time: 16:00h (TBC)" />
+            <HomeRow boldText="Location:" text=" Negril, Jamaica" />
+            <HomeRow
+              boldText="RSVP: "
+              text=" Contact Roz or Simon by December 8th, 2023"
+            />
+          </div>
         </div>
       </div>
     </div>
