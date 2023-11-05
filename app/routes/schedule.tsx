@@ -16,11 +16,12 @@ const SCHEDULE_DETAILS = [
     description:
       'We want to have some fun today and take a nice boat trip to an island close by. We will have a nice lunch on the beach, with fresh grilled lobster and enjoy the sun.',
     eventDate: 'December 15, 2023',
-    eventTime: 'daytime',
+    eventTime: 'around lunch time',
     googleMapSrc:
       'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15151.570110415427!2d-78.3396663!3d18.3065224!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ed90df96445bbd3%3A0x717702c7ebd87d0e!2sTiki%20Pon%20Da%20Sea%20Jamaica!5e0!3m2!1sen!2suk!4v1699136356010!5m2!1sen!2suk',
     icon: 'sailboat',
     location: 'Negril Beach, Tiki Pon Da Sea',
+    link: 'https://www.tikipondasea.com/',
     title: 'Boat time with grilled lobster',
     youtubeSrc: 'https://www.youtube.com/embed/Kz4_jNXSvrM?si=Kt4zXOgD0RfWBf1D',
   },

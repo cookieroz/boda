@@ -45,6 +45,7 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+        <link rel="manifest" href="/site.webmanifest" />
         <Meta />
         {title ? <title>{title}</title> : null}
         <Links />

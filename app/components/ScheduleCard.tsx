@@ -9,7 +9,7 @@ export const ScheduleCard = ({
   googleMapSrc,
   icon,
   location,
-  // url,
+  link,
   title,
   youtubeSrc,
 }: any) => (
@@ -41,7 +41,22 @@ export const ScheduleCard = ({
 
     {attire && <p>{attire}</p>}
 
-    {location && <p className="font-bold">{location}</p>}
+    {location && (
+      <p className="font-bold">
+        {link ? (
+          <a
+            aria-label={`${location} link`}
+            className="cursor-pointer font-bold mr-2 text-cyan-700 hover:underline"
+            title={`${location} link`}
+            href={link === 'home' ? '/' : `/${link}`}
+          >
+            {location}
+          </a>
+        ) : (
+          location
+        )}
+      </p>
+    )}
 
     {youtubeSrc && (
       <div className="h-80 mb-6 relative">
