@@ -1,9 +1,11 @@
 /** @type {import('eslint').Linter.Config} */
-module.exports = {
+export default {
   extends: [
     '@remix-run/eslint-config',
     '@remix-run/eslint-config/node',
-    '@remix-run/eslint-config/jest-testing-library'
+    '@remix-run/eslint-config/jest-testing-library',
+    '@remix-run/eslint-config',
+    '@remix-run/eslint-config/node'
   ],
   overrides: [
     {
