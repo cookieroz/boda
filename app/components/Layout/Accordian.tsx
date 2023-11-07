@@ -1,11 +1,16 @@
-import { type PropsWithChildren, useState } from 'react';
+import React, { type PropsWithChildren, useState } from 'react';
 
-// @ts-ignore
-export const Accordian = ({ children, title = '' }: PropsWithChildren) => {
+interface AccordianProps {
+  children?: React.ReactNode;
+  title?: string;
+}
+
+export const Accordian = ({ children, title = '' }: AccordianProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
-  const toggleWrapperStyles =
-    'animate-[' + (isOpen ? 'slideUp' : 'slideDown') + '_1s_ease-in-out]';
+  const toggleWrapperStyles = isOpen
+    ? 'animate-slideDown visible translate-y-full h-auto'
+    : 'animate-slideUp invisible translate-y-[-100%] h-0';
 
   return (
     <>

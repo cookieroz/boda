@@ -19,14 +19,17 @@ const NegrilPage = () => (
       wedding festivities.
     </p>
 
-    {NEGRIL_HIGHLIGHTS.map(({ description, googleMapsSrc, title }) => (
-      <TravelCard
-        key={title}
-        description={description}
-        googleMapsSrc={googleMapsSrc}
-        title={title}
-      />
-    ))}
+    {NEGRIL_HIGHLIGHTS.map(
+      ({ description, googleMapsSrc, title, youtubeSrc }) => (
+        <TravelCard
+          key={title}
+          description={description}
+          googleMapsSrc={googleMapsSrc}
+          youtubeSrc={youtubeSrc}
+          title={title}
+        />
+      )
+    )}
   </>
 );
 
@@ -37,6 +40,7 @@ const NEGRIL_HIGHLIGHTS = [
     googleMapsSrc:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30306.508408409914!2d-78.36394746988081!3d18.287263663115105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ed90daa7ec917d5%3A0xf4e78a91c14901e5!2sNegril%20Seven%20Mile%20Beach!5e0!3m2!1sen!2suk!4v1699132030536!5m2!1sen!2suk',
     title: 'Seven Mile Beach',
+    youtubeSrc: 'https://www.youtube.com/embed/8SAbBVdx2JQ?si=bdXCNkGQnGLSeKYL',
   },
   {
     description:
@@ -44,6 +48,7 @@ const NEGRIL_HIGHLIGHTS = [
     googleMapsSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d947.2581703480386!2d-78.36352082161144!3d18.254323337682344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ed9120b7e08c91d%3A0xd50aa55ffa3857cd!2sRick's+Cafe!5e0!3m2!1sen!2sus!4v1519413800021",
     title: "Rick's Café",
+    youtubeSrc: 'https://www.youtube.com/embed/sJnM-NdJ9qg?si=Vsj6LsvQHNGJUG1B',
   },
   {
     description:

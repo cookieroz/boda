@@ -14,7 +14,7 @@ export default {
       keyframes: {
         slideDown: {
           '0%': { transform: 'translateY(-100%)' },
-          '50%': { transform: 'translateY(-50%)' },
+          '50%': { transform: 'translateY(-50%)'},
           '100%': { transform: 'translateY(0%)' },
         },
         slideUp: {
