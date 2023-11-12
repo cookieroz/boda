@@ -1,6 +1,5 @@
 import { useMemo, type PropsWithChildren } from 'react';
-// import type { LinksFunction, MetaFunction } from '@remix-run/node';
-// import type { LinksFunction } from '@remix-run/node';
+import type { MetaFunction } from '@remix-run/node';
 import {
   isRouteErrorResponse,
   Links,
@@ -11,26 +10,20 @@ import {
   useRouteError,
 } from '@remix-run/react';
 
-import globalStylesheetUrl from './styles/global.css';
+import { Footer } from '~/components/Layout/Footer';
 import { Header } from '~/components/Layout/Header';
 
-// export const links: LinksFunction = () => {
-//   return [
-//     { rel: 'stylesheet', href: globalStylesheetUrl, as: 'style' },
-//     // { rel: 'preload', href: globalStylesheetUrl, as: 'style' },
-//   ];
-// };
+import globalStylesheetUrl from './styles/global.css';
+import { buildMetaTags } from '~/lib/metaUtils';
 
-// export const meta: MetaFunction = () => {
-//   const description =
-//     "Roz & Simon's Jamaican destination wedding, RSVP & details";
-//
-//   return [
-//     { name: 'description', content: description },
-//     { name: 'twitter:description', content: description },
-//     { title: "Roz & Simon's Jamaican Wedding" },
-//   ];
-// };
+export const meta: MetaFunction = () => {
+  const description = "Roz & Simon's Jamaican Destination Wedding";
+
+  return buildMetaTags({
+    description,
+    title: "Roz & Simon's Jamaican Wedding",
+  });
+};
 
 function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
   return (
@@ -39,7 +32,23 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         <meta charSet="utf-8" />
         <meta httpEquiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="jamaica,wedding,destination wedding" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="/assets/cartoon-wedding-cats-island.jpeg"
+        />
+        <meta
+          name="keywords"
+          content="jamaica,wedding,destination wedding,negril wedding"
+        />
+        <meta
+          name="twitter:card"
+          content="/assets/cartoon-wedding-cats-island.jpeg"
+        />
+        <meta
+          name="twitter:image"
+          content="/assets/cartoon-wedding-cats-island.jpeg"
+        />
         <link rel="stylesheet" href={globalStylesheetUrl} as="style" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -52,7 +61,7 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
       </head>
 
       <body
-        className="bg-cover bg-no-repeat bg-right-bottom bg-[url('/assets/travel-background.jpeg')] min-h-screen"
+        className="bg-cover bg-no-repeat bg-right-bottom bg-[url('/assets/travel-background.jpeg')] min-h-screen transition-all"
         suppressHydrationWarning={true}
       >
         {children}
@@ -72,6 +81,9 @@ export default function App() {
         <section className="bg-[rgba(255,255,255,.75)] p-5 shadow-lg">
           <Outlet />
         </section>
+
+        <Footer />
+
         <img
           alt="svg sprite of icons"
           className="hidden"

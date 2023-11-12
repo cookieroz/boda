@@ -1,4 +1,20 @@
-import { TravelCard } from '~/components/TravelCard';
+import { MetaFunction } from '@remix-run/node';
+
+import { AccordionCard } from '~/components/AccordionCard';
+import { Iframe } from '~/components/Iframe';
+import { buildMetaTags } from '~/lib/metaUtils';
+
+export const meta: MetaFunction = ({ location }) => {
+  const description =
+    'Negril is a place of extraordinary natural beauty, vibrant culture, and a laid-back atmosphere that makes it the perfect backdrop for our special day. From its famous Seven Mile Beach to the enchanting cliffs and lush tropical landscapes, Negril offers a picture-perfect setting for our wedding festivities.';
+  const title = 'Negril, Jamaica Highlights';
+
+  return buildMetaTags({
+    description,
+    title,
+    url: location.pathname,
+  });
+};
 
 const NegrilPage = () => (
   <>
@@ -21,7 +37,7 @@ const NegrilPage = () => (
 
     {NEGRIL_HIGHLIGHTS.map(
       ({ description, googleMapsSrc, title, youtubeSrc }) => (
-        <TravelCard
+        <AccordionCard
           key={title}
           description={description}
           googleMapsSrc={googleMapsSrc}
@@ -30,6 +46,10 @@ const NegrilPage = () => (
         />
       )
     )}
+
+    <div className="h-28 overflow-hidden relative">
+      <Iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1628828416&color=%23e0e5e7&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false" />
+    </div>
   </>
 );
 

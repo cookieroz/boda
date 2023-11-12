@@ -1,11 +1,26 @@
-import { FaqCard } from '~/components/FaqCard';
+import { MetaFunction } from '@remix-run/node';
+
+import { AccordionCard } from '~/components/AccordionCard';
+import { buildMetaTags } from '~/lib/metaUtils';
+
+export const meta: MetaFunction = ({ location }) => {
+  const description =
+    "Frequency Asked Questions about Roz & Simon's Negril, Jamaica Wedding";
+  const title = "FAQ about Roz & Simon's Negril, Jamaica Wedding";
+
+  return buildMetaTags({
+    description,
+    title,
+    url: location.pathname,
+  });
+};
 
 const DetailsPage = () => (
   <>
     <h1>FAQ</h1>
 
     {FAQ.map(({ answer, question }) => (
-      <FaqCard answer={answer} key={question} question={question} />
+      <AccordionCard description={answer} key={question} title={question} />
     ))}
   </>
 );

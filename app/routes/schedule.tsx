@@ -1,4 +1,21 @@
+import { type MetaFunction } from '@remix-run/node';
+
 import { ScheduleCard } from '~/components/ScheduleCard';
+import { buildMetaTags } from '~/lib/metaUtils';
+import { Iframe } from '~/components/Iframe';
+import React from 'react';
+
+export const meta: MetaFunction = ({ location }) => {
+  const description =
+    "Wedding schedule for Roz & Simon's Negril, Jamaica wedding.";
+  const title = "Roz & Simon's Negril, Jamaica Wedding Schedule";
+
+  return buildMetaTags({
+    description,
+    title,
+    url: location.pathname,
+  });
+};
 
 const SchedulePage = () => (
   <>
@@ -7,6 +24,10 @@ const SchedulePage = () => (
     {SCHEDULE_DETAILS.map((scheduleDetail) => (
       <ScheduleCard key={scheduleDetail.title} {...scheduleDetail} />
     ))}
+
+    <div className="h-24 overflow-hidden relative">
+      <Iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/493344339&color=%23e0e5e7&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false" />
+    </div>
   </>
 );
 

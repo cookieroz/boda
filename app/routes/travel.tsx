@@ -1,12 +1,68 @@
-import { TravelCard } from '~/components/TravelCard';
-import { Iframe } from '~/components/Iframe';
 import React from 'react';
+import { type MetaFunction } from '@remix-run/node';
+
+import { AccordionCard } from '~/components/AccordionCard';
+import { Iframe } from '~/components/Iframe';
+import { buildMetaTags } from '~/lib/metaUtils';
+
+export const meta: MetaFunction = ({ location }) => {
+  const description =
+    'Tips on traveling to Jamaica & Negril. Consejos para viajar a Negril, Jamaica.';
+  const title = 'Jamaica Travel Tips';
+
+  return buildMetaTags({
+    description,
+    title,
+    url: location.pathname,
+  });
+};
 
 const TravelPage = () => (
   <>
     <h1 className="my-3">Travel</h1>
 
-    <TravelCard
+    <div className="flex flex-col gap-x-3 justify-between my-6 md:flex-row">
+      {INTRO_VIDEOS.map((src) => (
+        <div key={src} className="flex-1 h-80 relative">
+          <Iframe src={src} />
+        </div>
+      ))}
+    </div>
+
+    <AccordionCard key="travel-tips" title="Jamaica Travel Tips">
+      <div className="flex flex-col gap-x-3 justify-between md:flex-row">
+        <p className="flex flex-col flex-1">
+          <span className="font-medium mb-4 text-xl">
+            Jamaica uses the <strong className="underline">same</strong> plugs
+            as the US, the voltage is 110v.
+          </span>
+
+          {TIP_LINKS.map(({ href, title }) => (
+            <a
+              key={title}
+              className="mb-2 text-cyan-700 underline hover:text-rose-400"
+              href={href}
+              target="_blank"
+              title={title}
+            >
+              {title}
+            </a>
+          ))}
+        </p>
+
+        <img
+          alt="jamaica electric plug"
+          className="flex-1 w-full h-auto md:w-3/12"
+          src="https://world-power-plugs.com/img/plugs/es/jamaica-enchufes-el%C3%A9ctricos.png"
+        />
+      </div>
+    </AccordionCard>
+
+    {TRAVEL_DETAILS.map(({ description, title }) => (
+      <AccordionCard key={title} description={description} title={title} />
+    ))}
+
+    <AccordionCard
       key="Accommodations"
       description='There are plenty of options on where to stay in Negril. There are lots of all inclusive hotels as well as budget options. Lots of affordable airbnb places as well. The wedding activities will be near the south, on the "west end" near the cliffs and no beach.'
       title="Accommodation"
@@ -24,20 +80,16 @@ const TravelPage = () => (
           </div>
         ))}
       </div>
-    </TravelCard>
-
-    {TRAVEL_DETAILS.map(({ description, title }) => (
-      <TravelCard key={title} description={description} title={title} />
-    ))}
+    </AccordionCard>
   </>
 );
 
+const INTRO_VIDEOS = [
+  'https://www.youtube.com/embed/DL8cobA52Tk?si=A3Iuq64Y7w3nV-rc',
+  'https://www.youtube.com/embed/_OjVPYxh6go?si=hNSh81n155YzLILj',
+];
+
 const TRAVEL_DETAILS = [
-  {
-    description:
-      'We recommend flying into Montego Bay- Sangster International Airport. From there it is around a 1 hour drive south to Negril.',
-    title: 'Getting In',
-  },
   {
     description:
       'We recommend taking taxis to get around. You can also rent a car if you want to explore the island. They do drive on the left side of the road, like in UK.',
@@ -45,8 +97,27 @@ const TRAVEL_DETAILS = [
   },
   {
     description:
-      'Jamaica uses the same outlets as the UK. We read that they do follow the US tipping culture as well.',
-    title: 'Tips',
+      'We recommend flying into Montego Bay- Sangster International Airport. From there it is around a 1 hour drive south to Negril.',
+    title: 'Getting In',
+  },
+];
+
+const TIP_LINKS = [
+  {
+    href: 'https://www.lonelyplanet.com/articles/things-to-know-before-traveling-to-jamaica',
+    title: '21 things to know before traveling to Jamaica',
+  },
+  {
+    href: 'https://www.elviajedesofi.com/viajar-jamaica/',
+    title: 'Viajar a Jamaica en 20 tips',
+  },
+  {
+    href: 'https://oceancliffhotel.com/vacation-guide/',
+    title: 'Your Guide to Negril, Jamaica - [password to enter is "vacation"]',
+  },
+  {
+    href: 'https://www.viajarjamaica.com/equipaje-que-llevar.php',
+    title: '¿Qué llevar a un viaje a Jamaica?',
   },
 ];
 

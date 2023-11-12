@@ -5,23 +5,11 @@ export default {
   theme: {
     extend: {
       animation: {
-        slideDown: 'slideDown 1s ease-in-out',
-        slideUp: 'slideUp 1s ease-in-out',
+        slideDown: 'slideDown 1s ease-out',
+        slideUp: 'slideUp 1s ease-out',
       },
       fontFamily: {
         sans: ['Dosis', 'Verdana', 'sans-serif'],
-      },
-      keyframes: {
-        slideDown: {
-          '0%': { transform: 'translateY(-100%)' },
-          '50%': { transform: 'translateY(-50%)'},
-          '100%': { transform: 'translateY(0%)' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(0%)' },
-          '50%': { transform: 'translateY(-50%)' },
-          '100%': { transform: 'translateY(-100%)' },
-        },
       },
     },
   },

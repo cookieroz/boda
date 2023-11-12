@@ -1,3 +1,8 @@
+interface IframeProps {
+  src?: string;
+  title?: string;
+}
+
 export const Iframe = ({ src = '', title }: any) =>
   src ? (
     <iframe
