@@ -13,7 +13,7 @@ export const HomePage = () => {
           <img
             alt="cartoon of 2 cats getting married on the beach"
             className="max-h-full max-w-full"
-            src="/assets/cartoon-wedding-cats-island.jpeg"
+            src="/assets/negril-wedding.jpeg"
           />
         </div>
 

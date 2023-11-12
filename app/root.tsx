@@ -35,7 +35,7 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="/assets/cartoon-wedding-cats-island.jpeg"
+          content="/assets/negril-wedding.jpeg"
         />
         <meta
           name="keywords"
@@ -43,11 +43,11 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         />
         <meta
           name="twitter:card"
-          content="/assets/cartoon-wedding-cats-island.jpeg"
+          content="/assets/negril-wedding.jpeg"
         />
         <meta
           name="twitter:image"
-          content="/assets/cartoon-wedding-cats-island.jpeg"
+          content="/assets/negril-wedding.jpeg"
         />
         <link rel="stylesheet" href={globalStylesheetUrl} as="style" />
         <link
