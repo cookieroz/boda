@@ -2,6 +2,7 @@ import { MetaFunction } from '@remix-run/node';
 
 import { AccordionCard } from '~/components/AccordionCard';
 import { Iframe } from '~/components/Iframe';
+import { TravelNotice } from '~/components/TravelNotice';
 import { buildMetaTags } from '~/lib/metaUtils';
 
 export const meta: MetaFunction = ({ location }) => {
@@ -19,6 +20,8 @@ export const meta: MetaFunction = ({ location }) => {
 const NegrilPage = () => (
   <>
     <h1>Negril Highlights</h1>
+
+    <TravelNotice />
 
     <p>
       We are thrilled to invite you to join us in celebrating our love in the

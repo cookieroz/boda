@@ -19,6 +19,25 @@ const DetailsPage = () => (
   <>
     <h1>FAQ</h1>
 
+    <AccordionCard title="Do I need a visa for Jamaica?">
+      <p className="mb-3">
+        It depends on your passport. Travelers with US, UK or EU passports do
+        not need a visa. However,{' '}
+        <span className="font-bold text-rose-400">ALL</span> international
+        passengers to Jamaica are required to complete the digital{' '}
+        <a
+          className="font-bold text-rose-400 underline hover:text-cyan-700"
+          href="https://enterjamaica.com/"
+          target="_blank"
+          title="C5 Immigration and Customs Form"
+        >
+          C5 Immigration and Customs Form
+        </a>
+        . Please go to the link and fill out the electronic form before taking
+        your flight.
+      </p>
+    </AccordionCard>
+
     {FAQ.map(({ answer, question }) => (
       <AccordionCard description={answer} key={question} title={question} />
     ))}

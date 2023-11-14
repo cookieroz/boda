@@ -8,7 +8,7 @@ export const Footer = () => {
   });
 
   return (
-    <footer className="h-28 mt-6 relative">
+    <footer className="h-[210px] mt-6 relative md:h-28">
       <a
         className="weatherwidget-io"
         data-days="7"

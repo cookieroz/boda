@@ -21,13 +21,35 @@ const TravelPage = () => (
   <>
     <h1 className="my-3">Travel</h1>
 
-    <div className="flex flex-col gap-x-3 justify-between my-6 md:flex-row">
+    <div className="flex flex-col flex-wrap gap-x-3 justify-between py-6 md:flex-row">
       {INTRO_VIDEOS.map((src) => (
         <div key={src} className="flex-1 h-80 relative">
           <Iframe src={src} />
         </div>
       ))}
+
+      <hr className="basis-full border-rose-300 border-2 mt-12" />
     </div>
+
+    <AccordionCard
+      key="travel-tips"
+      title="Forms to fill out before arriving to Jamaica"
+    >
+      <p className="mb-3">
+        <span className="font-bold text-rose-400">ALL</span> international
+        passengers to Jamaica are required to complete the digital{' '}
+        <a
+          className="font-bold text-rose-400 underline hover:text-cyan-700"
+          href="https://enterjamaica.com/"
+          target="_blank"
+          title="C5 Immigration and Customs Form"
+        >
+          C5 Immigration and Customs Form
+        </a>
+        . Please go to the link and fill out the electronic form before taking
+        your flight.
+      </p>
+    </AccordionCard>
 
     <AccordionCard key="travel-tips" title="Jamaica Travel Tips">
       <div className="flex flex-col gap-x-3 justify-between md:flex-row">
