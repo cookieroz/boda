@@ -1,5 +1,6 @@
 import { HomeRow } from '~/components/HomeRow';
 import { TravelNotice } from '~/components/TravelNotice';
+import { Countdown } from '~/components/Countdown';
 
 export const HomePage = () => (
   <>
@@ -18,6 +19,8 @@ export const HomePage = () => (
         <h4 className="text-4xl">
           We would love to celebrate our wedding with you in Jamaica!
         </h4>
+
+        {/*<Countdown targetDate="December 16, 2023 16:00:00" />*/}
 
         <div className="flex flex-col items-center justify-center">
           <h2 className="my-4 text-4xl text-center">Wedding Details</h2>

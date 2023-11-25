@@ -32,7 +32,7 @@ const TravelPage = () => (
     </div>
 
     <AccordionCard
-      key="travel-tips"
+      key="forms-to-fill-jamaica"
       title="Forms to fill out before arriving to Jamaica"
     >
       <p className="mb-3">
@@ -86,7 +86,7 @@ const TravelPage = () => (
 
     <AccordionCard
       key="Accommodations"
-      description='There are plenty of options on where to stay in Negril. There are lots of all inclusive hotels as well as budget options. Lots of affordable airbnb places as well. The wedding activities will be near the south, on the "west end" near the cliffs and no beach.'
+      description='There are plenty of options on where to stay in Negril. We are staying at the Riu Negril. There is a 10% discount and free transportation if you sign up to be a "Riu Class" member before you make the reservation. There are lots of all inclusive hotels as well as budget options. Lots of affordable airbnb places as well. The wedding activities will be near the south, on the "west end" near the cliffs and no beach.'
       title="Accommodation"
     >
       <p>Some options we thought were nice:</p>
