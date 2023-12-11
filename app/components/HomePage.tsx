@@ -27,7 +27,7 @@ export const HomePage = () => (
 
           <div className="">
             <HomeRow boldText="Date" text=": December 16, 2023" />
-            <HomeRow boldText="Time" text=": Time: 15:30h (3:30pm)" />
+            <HomeRow boldText="Time" text=": 15:00h / 3:00pm" />
             <HomeRow boldText="Location" text=": Negril, Jamaica" />
             <HomeRow
               boldText="RSVP"

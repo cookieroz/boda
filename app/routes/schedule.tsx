@@ -56,7 +56,7 @@ const CEREMONY_DETAILS = {
 
 const RECEPTION_DETAILS = {
   description: 'Reception',
-  eventTime: '6pm',
+  eventTime: '6 - 10:30pm',
   icon: 'wedding-couple',
 };
 

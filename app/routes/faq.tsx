@@ -38,36 +38,39 @@ const DetailsPage = () => (
       </p>
     </AccordionCard>
 
-    {FAQ.map(({ answer, question }) => (
-      <AccordionCard description={answer} key={question} title={question} />
+    {FAQ.map(({ answer, icon, question }) => (
+      <AccordionCard
+        description={answer}
+        icon={icon}
+        key={question}
+        title={question}
+      />
     ))}
   </>
 );
 
 const FAQ = [
   {
-    answer: 'Please RSVP by December 8th, 2023',
-    question: 'When is the RSVP deadline?',
-  },
-  {
     answer:
       'Linen is always good, but we are just happy for your to come and celebrate and wear whatever you feel happy in. The venue is a hotel that is clothes optional so if you want to wear nothing, that works too!',
+    icon: 'pants',
     question: 'What should I wear?',
   },
   {
     answer:
       'The planner said the floor is concrete at the venue, so there was no need for a dance floor. We will have a DJ and a sound system for dancing, but she did mention, stiletto heels may not be the best idea.',
+    icon: 'shoes',
     question: 'What kind of shoes do I need?',
   },
   {
-    answer: 'It will be outdoors, on a beautiful cliff. You can jump into the sea from the venue if you would like to!',
+    answer:
+      'It will be outdoors, on a beautiful cliff. You can jump into the sea from the venue if you would like to!',
     question: 'Is the wedding indoors or outdoors?',
   },
   {
     answer: 'Yes! Just let us know the final total number of people coming.',
     question: 'Can I bring a date?',
   },
-  { answer: 'Yes!', question: 'Are kids welcome?' },
   {
     answer:
       'The daytime temperatures hover around 84 degrees, while nighttime temperatures are between 72-75 degrees.',
@@ -85,8 +88,14 @@ const FAQ = [
   {
     answer:
       'Why not?! It was something that we were thinking of before covid and things worked out for us to celebrate in Jamaica this year. YOLO.',
+    icon: 'jamaica',
     question: 'Why Jamaica?',
   },
+  {
+    answer: 'Please RSVP by December 8th, 2023',
+    question: 'When is the RSVP deadline?',
+  },
+  { answer: 'Yes!', question: 'Are kids welcome?' },
   // { answer: '', question: '' },
 ];
 
