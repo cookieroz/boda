@@ -3,6 +3,7 @@ import { type MetaFunction } from '@remix-run/node';
 
 import { AccordionCard } from '~/components/AccordionCard';
 import { Iframe } from '~/components/Iframe';
+import { StyledLink } from '~/components/StyledLink';
 import { buildMetaTags } from '~/lib/metaUtils';
 
 export const meta: MetaFunction = ({ location }) => {
@@ -21,37 +22,120 @@ const TravelPage = () => (
   <>
     <h1 className="my-3">Travel</h1>
 
-    <div className="flex flex-col flex-wrap gap-x-3 justify-between py-6 md:flex-row">
-      {INTRO_VIDEOS.map((src) => (
-        <div key={src} className="flex-1 h-80 relative">
-          <Iframe src={src} />
-        </div>
-      ))}
+    <AccordionCard key="getting-in-jamaica" icon="airplane" title="Getting In">
+      <p className="mb-3 mt-6">
+        We recommend flying into Montego Bay- Sangster International Airport.
+        Expect around <span className="font-bold">2 hours</span> to get through
+        the airport & customs. From there it is around a 2 hour drive south to
+        Negril.
+      </p>
 
-      <hr className="basis-full border-rose-300 border-2 mt-12" />
-    </div>
+      <p className="mb-3">
+        <StyledLink
+          href="https://www.rome2rio.com/s/Montego-Bay-Airport-MBJ/Negril"
+          // @ts-ignore
+          title="How to get from Montego Bay Airport (MBJ) to Negril"
+        >
+          How to get from Montego Bay Airport (MBJ) to Negril.
+        </StyledLink>
+      </p>
+
+      <p className="mb-3">
+        <StyledLink
+          href="https://www.exploringcaribbean.com/montego-bay-to-negril/"
+          // @ts-ignore
+          title="Detailed article on traveling to Negril from Montego Bay Airport (MBJ)"
+        >
+          Detailed article on traveling to Negril from Montego Bay Airport
+          (MBJ).
+        </StyledLink>
+      </p>
+    </AccordionCard>
 
     <AccordionCard
       key="forms-to-fill-jamaica"
+      icon="ticket"
       title="Forms to fill out before arriving to Jamaica"
     >
-      <p className="mb-3">
+      <p className="mb-3 mt-6">
         <span className="font-bold text-rose-400">ALL</span> international
         passengers to Jamaica are required to complete the digital{' '}
-        <a
-          className="font-bold text-rose-400 underline hover:text-cyan-700"
+        <StyledLink
           href="https://enterjamaica.com/"
-          target="_blank"
+          // @ts-ignore
           title="C5 Immigration and Customs Form"
         >
           C5 Immigration and Customs Form
-        </a>
+        </StyledLink>
         . Please go to the link and fill out the electronic form before taking
         your flight.
       </p>
     </AccordionCard>
 
-    <AccordionCard key="travel-tips" title="Jamaica Travel Tips">
+    <AccordionCard
+      key="getting-around-jamaica"
+      icon="map"
+      title="Getting around"
+    >
+      <p className="mb-3 mt-6">
+        It is recommended to take taxis to get around.{' '}
+        <strong>There is no Uber in Negril.</strong> You can also rent a car if
+        you want to explore the island. They do drive on the left side of the
+        road, like in UK.
+      </p>
+
+      <p className="mb-3">
+        <StyledLink
+          href="https://www.frommers.com/destinations/negril/planning-a-trip/getting-around"
+          // @ts-ignore
+          title="How to get around Negril"
+        >
+          Frommer's take on getting around Negril:
+        </StyledLink>{' '}
+        You can also rent a scooter or pedal bicycle from local shops there. The
+        scooter is recommended over the bicycle, just because you are more
+        visible to cars and can go faster to keep up with traffic. A bike helmet
+        is included in the rental fee which is roughly $40/day but can be
+        negotiated.
+      </p>
+    </AccordionCard>
+
+    <AccordionCard
+      key="cell-service-jamaica"
+      icon="wallet"
+      title="Mobile & Money"
+    >
+      <p className="mb-3 mt-6">
+        Check with your cell / mobile provider for prices on data usage /
+        roaming in Jamaica. If you have an eSIM compatible phone, you can buy a
+        local eSIM in Jamaica.{' '}
+        <StyledLink
+          href="https://esimdb.com/jamaica"
+          // @ts-ignore
+          title="eSIM in Jamaica"
+        >
+          eSIM / Mobile / Cell options (with prices) in Jamaica
+        </StyledLink>
+      </p>
+
+      <p className="mb-3">
+        <StyledLink
+          href="https://www.frommers.com/destinations/jamaica/planning-a-trip/money"
+          // @ts-ignore
+          title="Money in Jamaica"
+        >
+          Frommer's take on money in Jamaica:
+        </StyledLink>{' '}
+        All the major resorts and first-class restaurants quote prices in U.S.
+        dollars, so many visitors can go through their entire trip without the
+        bother of converting their currency into Jamaican dollars. But it's
+        still prudent to carry some Jamaican dollars: For some transactions,
+        such as a drink of coconut water from a roadside vendor, prices are only
+        quoted in Jamaican dollars.
+      </p>
+    </AccordionCard>
+
+    <AccordionCard key="travel-tips" icon="jamaica" title="Jamaica Travel Tips">
       <div className="flex flex-col gap-x-3 justify-between md:flex-row">
         <p className="flex flex-col flex-1">
           <span className="font-medium mb-4 text-xl">
@@ -60,15 +144,15 @@ const TravelPage = () => (
           </span>
 
           {TIP_LINKS.map(({ href, title }) => (
-            <a
+            <StyledLink
               key={title}
-              className="mb-2 text-cyan-700 underline hover:text-rose-400"
+              className="mb-2"
               href={href}
-              target="_blank"
+              // @ts-ignore
               title={title}
             >
               {title}
-            </a>
+            </StyledLink>
           ))}
         </p>
 
@@ -80,13 +164,10 @@ const TravelPage = () => (
       </div>
     </AccordionCard>
 
-    {TRAVEL_DETAILS.map(({ description, title }) => (
-      <AccordionCard key={title} description={description} title={title} />
-    ))}
-
     <AccordionCard
       key="Accommodations"
       description='There are plenty of options on where to stay in Negril. We are staying at the Riu Negril. There is a 10% discount and free transportation if you sign up to be a "Riu Class" member before you make the reservation. There are lots of all inclusive hotels as well as budget options. Lots of affordable airbnb places as well. The wedding activities will be near the south, on the "west end" near the cliffs and no beach.'
+      icon="suitcase"
       title="Accommodation"
     >
       <p>Some options we thought were nice:</p>
@@ -103,25 +184,20 @@ const TravelPage = () => (
         ))}
       </div>
     </AccordionCard>
+
+    <div className="flex flex-col flex-wrap gap-x-3 justify-between py-6 md:flex-row">
+      {INTRO_VIDEOS.map((src) => (
+        <div key={src} className="flex-1 h-80 relative">
+          <Iframe src={src} />
+        </div>
+      ))}
+    </div>
   </>
 );
 
 const INTRO_VIDEOS = [
   'https://www.youtube.com/embed/DL8cobA52Tk?si=A3Iuq64Y7w3nV-rc',
   'https://www.youtube.com/embed/_OjVPYxh6go?si=hNSh81n155YzLILj',
-];
-
-const TRAVEL_DETAILS = [
-  {
-    description:
-      'We recommend taking taxis to get around. You can also rent a car if you want to explore the island. They do drive on the left side of the road, like in UK.',
-    title: 'Getting around',
-  },
-  {
-    description:
-      'We recommend flying into Montego Bay- Sangster International Airport. From there it is around a 1 hour drive south to Negril.',
-    title: 'Getting In',
-  },
 ];
 
 const TIP_LINKS = [

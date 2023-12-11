@@ -7,6 +7,7 @@ interface TravelCardProps {
   children?: React.ReactNode;
   description?: string;
   googleMapsSrc?: string;
+  icon?: string;
   title: string;
   youtubeSrc?: string;
 }
@@ -15,10 +16,11 @@ export const AccordionCard = ({
   children,
   description,
   googleMapsSrc,
+  icon,
   title,
   youtubeSrc,
 }: TravelCardProps) => (
-  <Accordion title={title}>
+  <Accordion icon={icon} title={title}>
     {description && <p>{description}</p>}
 
     {children}
