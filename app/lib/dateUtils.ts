@@ -4,7 +4,6 @@ const SECOND_IN_MILLISECONDS = 1000 * 60;
 
 export const getDateDifferenceRemaining = (targetDate = '') => {
   const now = new Date();
-  // const date = new Date('December 31, 2023 23:59:59');
   const date = new Date(targetDate);
   // @ts-ignore
   return date - now;

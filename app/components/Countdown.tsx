@@ -14,12 +14,9 @@ export const Countdown = ({ targetDate = '' }) => {
   const [seconds, setSeconds] = useState(0);
 
   const intervalRef = useRef<undefined | void | unknown>();
-  const timerRef = useRef({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const hasExpired = getDateDifferenceRemaining(targetDate) <= 0;
-
-    console.log({ hasExpired, targetDate });
 
     if (hasExpired) {
       // @ts-ignore

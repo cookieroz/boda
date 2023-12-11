@@ -1,5 +1,6 @@
 import { Icon } from '~/components/Icon';
 import { Iframe } from '~/components/Iframe';
+import { ScheduleCardTitle } from '~/components/ScheduleCard/ScheduleCardTitle';
 
 interface ScheduleCardContentProps {
   attire?: string;
@@ -25,17 +26,7 @@ export const ScheduleCardContent = ({
   youtubeSrc,
 }: ScheduleCardContentProps) => (
   <>
-    {icon && title && (
-      <div className="flex gap-4 items-center">
-        <Icon id={icon} className="h-8 w-8" />
-
-        <h3 className="my-3">{title}</h3>
-      </div>
-    )}
-
-    {title && !icon && <h3 className="my-3">{title}</h3>}
-
-    {icon && !title && <Icon id={icon} className="h-8 w-8" />}
+    <ScheduleCardTitle icon={icon} title={title} />
 
     {eventTime && (
       <small className="font-bold pb-2 text-rose-400">{eventTime}</small>
