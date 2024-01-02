@@ -1,11 +1,28 @@
-const buildTag = (content = '', property = '', name = '') => ({
+interface MetaTag {
+  content?: string;
+  name?: string;
+  property?: string;
+  title?: string;
+}
+
+interface BuildMetaTagsOptions {
+  description?: string;
+  title?: string;
+  url?: string;
+}
+
+const buildTag = (content = '', property = '', name = ''): MetaTag => ({
   content,
   ...(name?.length > 0 && { name }),
   ...(property?.length > 0 && { property }),
 });
 
-export const buildMetaTags = ({ description = '', title = '', url = '' }) => {
-  let metaTags = [
+export const buildMetaTags = ({
+  description = '',
+  title = '',
+  url = '',
+}: BuildMetaTagsOptions): MetaTag[] => {
+  let metaTags: MetaTag[] = [
     { title },
     buildTag(description, '', 'description'),
     buildTag(title, 'og:title'),
