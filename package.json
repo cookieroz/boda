@@ -56,13 +56,5 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  },
-  "lint-staged": {
-    "app/**/*.{ts,tsx,json}": [
-      "eslint --max-warnings 0 --fix"
-    ],
-    "app/**/*.{ts,tsx,json,css,md}": [
-      "prettier --write"
-    ]
   }
 }
