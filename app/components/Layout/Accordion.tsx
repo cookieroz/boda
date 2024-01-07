@@ -8,7 +8,11 @@ interface AccordionProps {
   title?: string;
 }
 
-export const Accordion = ({ children, icon = '', title = '' }: AccordionProps) => {
+export const Accordion = ({
+  children,
+  icon = '',
+  title = '',
+}: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
   const toggleWrapperStyles = isOpen ? 'max-h-[1000px]' : 'max-h-0';
@@ -26,7 +30,9 @@ export const Accordion = ({ children, icon = '', title = '' }: AccordionProps) =
 
             {title}
           </span>
-        ) : title}
+        ) : (
+          title
+        )}
 
         <Icon
           id="arrow"

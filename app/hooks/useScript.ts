@@ -13,7 +13,11 @@ interface UseScriptState {
 
 let cachedScripts: string[] = [];
 
-export const useScript = ({ code = null, src, ...scriptProps }: UseScriptProps) => {
+export const useScript = ({
+  code = null,
+  src,
+  ...scriptProps
+}: UseScriptProps) => {
   const [state, setState] = useState<UseScriptState>({
     error: false,
     loaded: false,

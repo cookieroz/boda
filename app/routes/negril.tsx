@@ -1,4 +1,4 @@
-import { MetaFunction } from '@remix-run/node';
+import { type MetaFunction } from '@remix-run/node';
 
 import { AccordionCard } from '~/components/AccordionCard';
 import { Iframe } from '~/components/Iframe';

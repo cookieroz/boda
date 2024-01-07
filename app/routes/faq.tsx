@@ -1,4 +1,4 @@
-import { MetaFunction } from '@remix-run/node';
+import { type MetaFunction } from '@remix-run/node';
 
 import { AccordionCard } from '~/components/AccordionCard';
 import { buildMetaTags } from '~/lib/metaUtils';
@@ -30,6 +30,7 @@ const DetailsPage = () => (
           href="https://enterjamaica.com/"
           target="_blank"
           title="C5 Immigration and Customs Form"
+          rel="noreferrer"
         >
           C5 Immigration and Customs Form
         </a>

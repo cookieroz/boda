@@ -49,7 +49,7 @@ export const Countdown = ({ targetDate = '' }) => {
       // @ts-ignore
       clearInterval(intervalRef.current);
     };
-  }, []);
+  }, [loading, targetDate]);
 
   return loading ? null : (
     <div className="my-4">
@@ -74,7 +74,7 @@ export const Countdown = ({ targetDate = '' }) => {
 };
 
 // @ts-ignore
-const TimeBlock = ({ time, label }) => (
+const TimeBlock = ({ label = '', time }) => (
   <div className="flex flex-col">
     <p className="font-bold text-center text-rose-400 text-xl md:text-2xl">
       {time}

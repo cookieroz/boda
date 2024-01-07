@@ -3,7 +3,7 @@ interface IframeProps {
   title?: string;
 }
 
-export const Iframe = ({ src = '', title }: any) =>
+export const Iframe = ({ src = '', title }: IframeProps) =>
   src ? (
     <iframe
       className="absolute border-0 h-full left-0 top-0 w-full"

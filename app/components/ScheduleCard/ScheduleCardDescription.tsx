@@ -1,5 +1,5 @@
-import { Icon } from '~/components/Icon';
 import React from 'react';
+import { Icon } from '~/components/Icon';
 
 interface ScheduleCardTitleProps {
   description: string;
@@ -25,7 +25,9 @@ export const ScheduleCardDescription = ({
       )}
 
       {eventTime && (
-        <small className="font-bold pb-2 text-rose-400 self-end">{eventTime}</small>
+        <small className="font-bold pb-2 text-rose-400 self-end">
+          {eventTime}
+        </small>
       )}
     </div>
 

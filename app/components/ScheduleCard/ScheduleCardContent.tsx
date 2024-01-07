@@ -1,4 +1,3 @@
-import { Icon } from '~/components/Icon';
 import { Iframe } from '~/components/Iframe';
 import { ScheduleCardTitle } from '~/components/ScheduleCard/ScheduleCardTitle';
 

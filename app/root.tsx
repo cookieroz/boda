@@ -1,5 +1,4 @@
-import { useMemo, type PropsWithChildren } from 'react';
-import type { MetaFunction } from '@remix-run/node';
+import { type MetaFunction } from '@remix-run/node';
 import {
   isRouteErrorResponse,
   Links,
@@ -9,12 +8,13 @@ import {
   Scripts,
   useRouteError,
 } from '@remix-run/react';
+import { useMemo, type PropsWithChildren } from 'react';
 
 import { Footer } from '~/components/Layout/Footer';
 import { Header } from '~/components/Layout/Header';
 
-import globalStylesheetUrl from './styles/global.css';
 import { buildMetaTags } from '~/lib/metaUtils';
+import globalStylesheetUrl from './styles/global.css';
 
 export const meta: MetaFunction = () => {
   const description = "Roz & Simon's Jamaican Destination Wedding";
@@ -33,22 +33,13 @@ function Document({ children, title }: PropsWithChildren<{ title?: string }>) {
         <meta httpEquiv="Content-Type" content="text/html;charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="/assets/negril-wedding.jpeg"
-        />
+        <meta property="og:image" content="/assets/negril-wedding.jpeg" />
         <meta
           name="keywords"
           content="jamaica,wedding,destination wedding,negril wedding"
         />
-        <meta
-          name="twitter:card"
-          content="/assets/negril-wedding.jpeg"
-        />
-        <meta
-          name="twitter:image"
-          content="/assets/negril-wedding.jpeg"
-        />
+        <meta name="twitter:card" content="/assets/negril-wedding.jpeg" />
+        <meta name="twitter:image" content="/assets/negril-wedding.jpeg" />
         <link rel="stylesheet" href={globalStylesheetUrl} as="style" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -103,8 +94,8 @@ export function ErrorBoundary() {
     const errorMessage = isRouteError
       ? null
       : error instanceof Error
-      ? error.message
-      : 'Unknown error';
+        ? error.message
+        : 'Unknown error';
     const title = isRouteError
       ? `${error.status} ${error.statusText}`
       : 'Uh-oh!';
